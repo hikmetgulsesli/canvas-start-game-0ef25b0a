@@ -14,12 +14,15 @@ export interface PlayCanvasCanvasStartGameProps {
   actions?: {
     "start-1"?: () => void;
   };
-
+  gameMessage?: string;
+  highScore?: number | null;
 }
 
 export type PlayCanvasCanvasStartGameActionCallbacks = NonNullable<PlayCanvasCanvasStartGameProps["actions"]>;
 
-export function PlayCanvasCanvasStartGame({ actions }: PlayCanvasCanvasStartGameProps) {
+export function PlayCanvasCanvasStartGame({ actions, gameMessage = "", highScore = null }: PlayCanvasCanvasStartGameProps) {
+  const highScoreValue = highScore === null ? "" : String(highScore);
+
   return (
     <>
       <div data-surface-id="SURF_PLAY_CANVAS" className="w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-8 flex flex-col items-center" data-setfarm-element-ref="E000001" data-observable-refs="OBS_START_GAME_PLAY_ROUTE_STABILITY">
@@ -41,13 +44,13 @@ export function PlayCanvasCanvasStartGame({ actions }: PlayCanvasCanvasStartGame
           <div className="w-full grid grid-cols-2 gap-4 mb-6">
             <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-4 flex flex-col justify-center">
               <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Game Status</span>
-              <div className="min-h-[1.5rem] text-sm font-medium text-emerald-400 flex items-center" data-setfarm-element-ref="E000002" role="status" aria-label="Game message" data-observable-refs="OBS_START_GAME_GAME_STARTED_MESSAGE"></div>
+              <div className="min-h-[1.5rem] text-sm font-medium text-emerald-400 flex items-center" data-setfarm-element-ref="E000002" role="status" aria-label="Game message" data-observable-refs="OBS_START_GAME_GAME_STARTED_MESSAGE">{gameMessage}</div>
             </div>
             <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-4 flex flex-col justify-center">
               <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Record</span>
               <div className="flex items-baseline space-x-2">
                 <span className="text-sm text-slate-400">High Score:</span>
-                <div className="text-lg font-bold text-sky-400 font-mono min-h-[1.5rem] flex items-center" data-setfarm-element-ref="E000003" role="status" aria-label="High score" data-observable-refs="OBS_START_GAME_HIGH_SCORE_VALUE"></div>
+                <div className="text-lg font-bold text-sky-400 font-mono min-h-[1.5rem] flex items-center" data-setfarm-element-ref="E000003" role="status" aria-label="High score" data-observable-refs="OBS_START_GAME_HIGH_SCORE_VALUE" data-value={highScoreValue}>{highScoreValue}</div>
               </div>
             </div>
           </div>
