@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-11-13T04:28:29.555Z",
+  "screenCount": 1,
+  "screens": {
+    "d3a0f637f94049278d4c769f9bf88a58": {
+      "screenId": "d3a0f637f94049278d4c769f9bf88a58",
+      "materialSymbolsRequired": false,
+      "sections": [],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Start",
+          "classes": [
+            "px-8",
+            "py-3.5",
+            "bg-sky-500",
+            "hover:bg-sky-400",
+            "active:bg-sky-600",
+            "text-slate-950",
+            "font-bold",
+            "rounded-xl",
+            "shadow-lg",
+            "shadow-sky-500/20",
+            "hover:shadow-sky-400/30",
+            "transition-all",
+            "duration-150",
+            "transform",
+            "active:scale-95",
+            "text-base",
+            "tracking-wide",
+            "flex",
+            "items-center",
+            "justify-center",
+            "cursor-pointer"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [],
+      "cards": [],
+      "icons": [],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {},
+      "fonts": [],
+      "layoutHints": {
+        "gridCols": 2,
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "Start",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "tabBar": [],
+      "title": "Play canvas - Canvas Start Game"
+    }
+  }
+}
